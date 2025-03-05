@@ -1,0 +1,76 @@
+<HTML>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f0f0f0;
+            padding: 30px;
+        }
+        table {
+            border-collapse: collapse;
+            th, td {
+            border: 1px solid #000000;
+            text-align: center;
+            background-color: rgb(255, 255, 255);
+        }
+
+        }
+        tr:nth-child(even) td:nth-child(even),
+        tr:nth-child(odd) td:nth-child(odd)
+        
+         {
+  background-color: rgba(150, 212, 212, 0.4);
+}
+
+
+    </style>
+    <HEAD>
+    <script type="text/javascript">
+    
+    function print(x)  {		
+        document.write(x);
+    }
+    
+    function genTable() {
+    
+    var n = parseInt(document.getElementById('n_Input').value);
+
+    
+    // -- BEGIN -- Put your code here
+            var output = "<table><tbody>";
+            //notes -- <tbody> tag is used to group the body content in an HTML table.
+            // there are other tags like <thead> <tfoot>
+
+            for (var i = 1; i <= n; i++) {
+                output += "<tr>";
+                    //notes -- "+=" means to take the value (RHS) in a variable(LHS) and add to it
+                for (var j = 1; j <= n; j++) {
+                    output += "<td>" + i + " x " + j + " = " + (i * j) +""+ "</td>";
+                }
+                output += "</tr>";
+            }
+            output += "</tbody></table>";
+
+            document.getElementById('showHere').innerHTML = output;
+        }
+    
+    
+    </script>
+    </HEAD>
+    
+    
+    
+    <BODY>
+    <p style="font-size:20pt;">
+    <input style="font-size:20pt;" size="1" type="text" id="n_Input" value="" placeholder="n">
+    <p>
+    <input style="font-size:20pt;background-color:orange" type="button" onclick="genTable()" value="Generate">
+    </p>
+    
+    
+    <H1>
+    <p style="font-size:10pt; font-style: normal ; font-family:'Times New Roman', Times, serif"  id="showHere"></p>
+    </H1>
+    
+    </BODY>
+    </HTML>
+    
